@@ -1,0 +1,7 @@
+{
+    
+
+    "connectionString": "mongodb://sa:sasa123@ds016068.mlab.com:16068/pmsdata",
+    "apiUrl": "http://localhost:4000",
+    "secret": "REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
+}

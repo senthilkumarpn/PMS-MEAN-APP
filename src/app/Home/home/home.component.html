@@ -1,0 +1,9 @@
+<p>Hi {{currentUser.FirstName}}</p>
+<p>You are logged in MeanStack App</p>
+<ul>
+  <li *ngFor="let user of users">
+    <p>User FirstName:{{user.FirstName}},LastName:{{user.LastName}}</p>
+    <a (click)="delete(user._id)">Delete</a>
+  </li>>
+  <p><a [routerLink]="['/login']">Logout</a></p>
+</ul>

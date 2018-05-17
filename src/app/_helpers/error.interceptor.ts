@@ -9,8 +9,10 @@ import { error } from 'util';
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor{
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        return next.handle(request);
-        return next.handle(request).pipe(error(error=> error));
+        // extract error message from http body if an error occurs
+        return next.handle(request).catch(errorResponse => {
+            return Observable.throw(errorResponse.error)
+        });
     }
 }
 export const ErrorInterceptorProvider = {

@@ -9,7 +9,7 @@ export class JwtInterceptor implements HttpInterceptor {
         if(currentUser && currentUser.token){
             request = request.clone({setHeaders:{Authorization:`Bearer ${currentUser.token}`}});
         }
-        next.handle(request);
+       return next.handle(request);
     }
 }
 export const JwtInterceptorProvider = {
